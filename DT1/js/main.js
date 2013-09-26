@@ -86,7 +86,7 @@ var FRISBEE = FRISBEE || {};
 			});
 		},
 
-		change: function () {
+		change: function () {	// hoe werkt dit?
             var route = window.location.hash.slice(2),
                 sections = qwery('article'),
                 section = qwery('[data-route=' + route + ']')[0];
@@ -110,7 +110,7 @@ var FRISBEE = FRISBEE || {};
 	FRISBEE.page = {
 		render: function (route) {
 			// http://javascriptweblog.wordpress.com/2010/04/19/how-evil-is-eval/
-			var data = eval('FRISBEE.'+route);
+			var data = eval('FRISBEE.'+route); // wat doet dit?
 
 			Transparency.render(qwery('[data-route='+route+']')[0], data);
 			FRISBEE.router.change();
