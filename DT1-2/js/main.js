@@ -59,18 +59,20 @@ var FRISBEE = FRISBEE || {};
   };
   
   
-  // losse functie, geen idee hoe ik deze er in moet zetten of waar dan ook?
+  /*
   for (var i = 0; i < FRISBEE.schedule.items.length; i++) { 
     var score1 = FRISBEE.schedule.items[i].team1Score;
     var score2 = FRISBEE.schedule.items[i].team2Score;
     
     if( Math.max(score1, score2) == score1 ) {
-      // alert(FRISBEE.schedule.items[i].team1);
-      // qwery('')[0].classList.add('winner');
+      // team 1 heeft gewonnen
+      alert(FRISBEE.schedule.items[i].team1);
     } else {
-      // alert(FRISBEE.schedule.items[i].team2);
+      // team 2 heeft gewonnen
+      alert(FRISBEE.schedule.items[i].team2);
     }
   }
+  */
   
   
   // Controller Init
