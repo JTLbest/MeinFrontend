@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Movies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/majaX.min.js" type="text/javascript"></script>
+    <script src="js/transparency.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Movies</h1>
+    </header>
+    
+    <section data-bind="movies">
+      <article>
+        <img data-bind="coverImage" src="#" />
+        <section>
+          <strong data-bind="title"></strong> (<span data-bind="release_date"></span>)
+          <p data-bind="description"></p>
+        </section>
+      </article>
+    </section>
+    
+    <script>
+      majaX({url:'http://dennistel.nl/movies'}, function(result) {
+        // movieList
+        var movieList = new Object();
+        movieList.movies = result;
+        
+        // imageList
+        //var imageList = new Object(); 
+        imageList = {
+          coverImage: {
+            src: function(params) {
+              return 'http://www.altrecht.nl/images/Blogs/2012/pino.jpg';
+              return movieList.movies.cover;
+            }
+          }
+        };
+        
+        Transparency.render(document, movieList, imageList);
+      });
+    </script>
+  </body>
+</html>
