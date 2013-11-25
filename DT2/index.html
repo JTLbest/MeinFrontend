@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Threesome Ultimate Frisbee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    
+    <script src="js/lib/routie.min.js"></script>
+    <script src="js/lib/ready.min.js" type="text/javascript"></script>
+    <script src="js/lib/qwery.min.js" type="text/javascript"></script>
+    <script src="js/lib/transparency.min.js" type="text/javascript"></script>
+    <script src="js/lib/majaX.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Amsterdam Ultimate Autumn</h1>
+    </header>
+    <nav>
+      <ul>
+        <li id="schedule"><a href="#/schedule">Schedule</a></li>
+        <li id="game"><a href="#/game">Game</a></li>
+        <li id="ranking"><a href="#/ranking">Ranking</a></li>
+      </ul>
+    </nav>
+    
+    <article data-route="schedule" class="active">
+      <h1>Schedule</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Team 1</th>
+            <th>Result</th>
+            <th>Team 2</th>
+          </tr>
+        </thead>
+        <tbody data-bind="objects">
+          <tr>
+            <td data-bind="start_time"></td>
+            <td data-bind="team_1"><span data-bind="name"></span></td>
+            <td data-bind="">
+              <span data-bind="team_1_score"></span> - <span data-bind="team_2_score"></span>
+            </td>
+            <td data-bind="team_2"><span data-bind="name"></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+    
+    <article data-route="game">
+      <h1>Game</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Team 1</th>
+            <th>Score(1)</th>
+            <th>Score(2)</th>
+            <th>Team 2</th>
+          </tr>
+        </thead>
+        <tbody data-bind="objects">
+          <tr>
+            <td data-bind="team_1"><span data-bind="name"></span></td>
+            <td data-bind="team_1_score"></td>
+            <td data-bind="team_2_score"></td>
+            <td data-bind="team_2"><span data-bind="name"></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+    
+    <article data-route="ranking">
+      <h1>Ranking</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>W</th>
+            <th>L</th>
+          </tr>
+          </thead>
+        <tbody data-bind="objects">
+          <tr>
+            <td data-bind="name"></td>
+            <td data-bind="wins"></td>
+            <td data-bind="losses"></td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- Application -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

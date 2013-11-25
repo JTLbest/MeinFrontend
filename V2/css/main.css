@@ -1,0 +1,229 @@
+* {
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+body {
+  font: 1em Arial;
+  padding: 0;
+  margin: 0;
+  background: #eee;
+  color: #333;
+}
+
+body > header {
+  background: #fff;
+  background-size: auto 100%;
+  display: block;
+  text-align: center;
+  padding: 1em;
+}
+
+.winner { font-weight: bold; color: red; }
+
+nav ul {
+  display: table;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  }
+  nav ul li {
+    display: table-cell;
+    width: 1%;
+    height: 3em;
+    text-align: left;
+  }
+  nav ul li a {
+    background: #fff;
+    display: block;
+    width: auto;
+    height: 3em;
+    line-height: 3em;
+    text-align: center;
+    text-decoration: none;
+    color: #999;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+  }
+  nav ul li.active a { background: #333; color: #fff;  border-bottom: 1px solid #333; }
+
+table {
+  width: 100%;
+  text-align: left;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  padding: 1em 0.5em;
+  margin: 1em 0;
+  }
+  table tr td, table tr th {
+    padding: 0.5em;
+  }
+
+article {
+  display: block;
+  visibility: hidden;
+  left: -100%;
+  position: absolute;
+  width: 100%;
+  }
+  article header {
+    padding: 0 1em;
+  }
+  article.active {
+    visibility: visible;
+    display: block;
+    left: 0;
+  }
+
+#feedback {
+  display: none;
+  z-index: 30;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.4);
+  color: #fff;
+  }
+  #feedback img {
+    display: block;
+    position: absolute;  
+    color: #fff;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    margin-left: -33px;
+    margin-top: -33px;
+  }
+  #feedback.active { display: block; }
+  
+article[data-route="schedule"] section div a {
+  display: block;
+  height: 8em;
+  overflow: hidden;
+  color: #333;
+  text-decoration:none;
+  background: #fff;
+  border-top: 1px solid #ccc;
+  position: relative;
+  }
+  article[data-route="schedule"] section div a:nth-of-type(2n) {
+    background: #f9f9f9;
+    border-bottom: 0;
+  }
+  article[data-route="schedule"] section div a:last-of-type {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1em;
+  }
+  article[data-route="schedule"] section div a h3 {
+    display: block;
+    position: absolute;
+    vertical-align: middle;
+    font-size: 1em;
+    top: 3.25em;
+    margin: 0;
+    height: 8em;
+  }
+  article[data-route="schedule"] section div a h3[data-bind="team_1"] {
+    left: 1em;
+    right: 50%;
+    margin-right: 4em;
+    text-align: left;
+  }
+  article[data-route="schedule"] section div a h3[data-bind="team_2"] {
+    right: 1em;
+    left: 50%;
+    margin-left: 4em;
+    text-align: right;
+  }
+  article[data-route="schedule"] section div a h2 {
+    position: absolute;
+    line-height: 8rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 0;
+  }
+  article[data-route="schedule"] section div a p {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    font-size: 0.8em;
+  }
+
+article[data-route="game"] div {
+  position: relative;
+  margin-bottom: 15px;
+  background: #fff;
+  padding: 0.5em;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  height: 13em;
+  }
+  article[data-route="game"] header a {
+    position: absolute;
+    font-size: 1.25em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+  }
+  article[data-route="game"] header h1 {
+    text-align: right;
+  }
+  article[data-route="game"] div h3 {
+    display: block;
+    position: absolute;
+    vertical-align: middle;
+    font-size: 1em;
+    top: 1em;
+    margin: 0;
+  }
+  article[data-route="game"] div h3:first-of-type {
+    left: 1em;
+    text-align: left;
+  }
+  article[data-route="game"] div h3:last-of-type {
+    right: 1em;
+    text-align: right;
+  }
+  article[data-route="game"] div input {
+    display: inline-block;
+    width: 2em;
+    top: 1.25em;
+    text-align: center;
+    font-size: 3em;
+    background: #eee;
+    border: 1px solid #ccc;
+    position: absolute;
+  }
+  article[data-route="game"] div input:first-of-type {
+    right: 50%;
+    margin-right: -2.2em;
+  }
+  article[data-route="game"] div input:last-of-type {
+    left: 50%;
+    margin-left: -2.2em;
+  }
+  article[data-route="game"] button {
+    display: block;
+    font-size: 1.25em;
+    border: 1px solid #ccc;
+    position: absolute;
+    width: 11em;
+    padding: 0.5em;
+    left: 50%;
+    margin-left: -5.5em;
+    top: 7em;
+  }
+  
+@media (max-width: 400px) {
+  body {
+    font-size: 0.7em;
+  }
+}

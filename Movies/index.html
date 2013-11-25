@@ -13,34 +13,31 @@
       <h1>Movies</h1>
     </header>
     
-    <section data-bind="movies">
-      <article>
-        <img data-bind="coverImage" src="#" />
-        <section>
-          <strong data-bind="title"></strong> (<span data-bind="release_date"></span>)
-          <p data-bind="description"></p>
-        </section>
-      </article>
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <th>Team 1</th>
+            <th>Score(1)</th>
+            <th>Score(2)</th>
+            <th>Team 2</th>
+          </tr>
+        </thead>
+        <tbody data-bind="objects">
+          <tr>
+            <td data-bind="team_1"><span data-bind="name"></span></td>
+            <td data-bind="team_1_score"></td>
+            <td data-bind="team_2_score"></td>
+            <td data-bind="team_2"><span data-bind="name"></span></td>
+          </tr>
+        </tbody>
+      </table>
     </section>
     
     <script>
-      majaX({url:'http://dennistel.nl/movies'}, function(result) {
-        // movieList
-        var movieList = new Object();
-        movieList.movies = result;
-        
-        // imageList
-        //var imageList = new Object(); 
-        imageList = {
-          coverImage: {
-            src: function(params) {
-              return 'http://www.altrecht.nl/images/Blogs/2012/pino.jpg';
-              //return movieList.movies.cover;
-            }
-          }
-        };
-        
-        Transparency.render(document, movieList, imageList);
+      majaX({url:'https://api.leaguevine.com/v1/game_scores/'}, function(result) {
+        console.log(result);
+        Transparency.render(document, result);
       });
     </script>
   </body>
